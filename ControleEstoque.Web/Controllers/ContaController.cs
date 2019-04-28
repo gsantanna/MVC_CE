@@ -27,7 +27,7 @@ namespace ControleEstoque.Web.Controllers
                 return View(login);
             }
 
-            var achou = (login.Usuario == "gsantanna" && login.Senha == "123");
+            var achou = (UsuarioModel.ValidarUsuario(login.Usuario ,login.Senha));
 
             if (achou)
             {
