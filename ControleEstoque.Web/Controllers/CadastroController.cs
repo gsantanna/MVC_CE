@@ -19,30 +19,21 @@ namespace ControleEstoque.Web.Controllers
         [Authorize]
         public ActionResult GrupoProduto()
         {
-            return View(_listaGrupoProduto);
+            return View(GrupoProdutoModel.RecuperarLista());
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult RecuperarGrupoProduto(int id)
         {
-            return Json(_listaGrupoProduto.Find(x => x.Id == id));
+            return Json(GrupoProdutoModel.RecuperarPeloId(id));
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult ExcluirGrupoProduto(int id)
         {
-            var ret = false;
-
-            var registroBd = _listaGrupoProduto.Find(x => x.Id == id);
-            if (registroBd != null)
-            {
-                _listaGrupoProduto.Remove(registroBd);
-                ret = true;
-            }
-
-            return Json(ret);
+            return Json(GrupoProdutoModel.ExcluirPeloId(id));
         }
 
         [HttpPost]
@@ -62,30 +53,25 @@ namespace ControleEstoque.Web.Controllers
             {
                 try
                 {
-                    var registroBd = _listaGrupoProduto.Find(x => x.Id == model.Id);
-
-                    if (registroBd == null)
+                    var id = model.Salvar();
+                    if (id > 0)
                     {
-                        registroBd = model;
-                        registroBd.Id = _listaGrupoProduto.Max(x => x.Id) + 1;
-                        _listaGrupoProduto.Add(registroBd);
+                        idSalvo = id.ToString();
                     }
                     else
                     {
-                        registroBd.Nome = model.Nome;
-                        registroBd.Ativo = model.Ativo;
+                        resultado = "ERRO";
                     }
                 }
                 catch (Exception ex)
                 {
-
                     resultado = "ERRO";
                 }
 
             }
 
 
-            return Json(new { Resultado = resultado, Mensagens = mensagens, IdSaldo = idSalvo });
+            return Json(new { Resultado = resultado, Mensagens = mensagens, IdSalvo = idSalvo });
         }
 
         [Authorize]

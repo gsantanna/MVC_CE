@@ -105,8 +105,8 @@ C:\DEV\MVC_CE\ControleEstoque.Web\bin\System.Web.WebPages.Razor.xml
 C:\DEV\MVC_CE\ControleEstoque.Web\bin\Newtonsoft.Json.xml
 C:\DEV\MVC_CE\ControleEstoque.Web\bin\Antlr3.Runtime.pdb
 C:\DEV\MVC_CE\ControleEstoque.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\DEV\MVC_CE\ControleEstoque.Web\obj\Debug\ControleEstoque.Web.csprojAssemblyReference.cache
 C:\DEV\MVC_CE\ControleEstoque.Web\obj\Debug\ControleEstoque.Web.csproj.CoreCompileInputs.cache
 C:\DEV\MVC_CE\ControleEstoque.Web\obj\Debug\ControleEstoque.Web.csproj.CopyComplete
 C:\DEV\MVC_CE\ControleEstoque.Web\obj\Debug\ControleEstoque.Web.dll
 C:\DEV\MVC_CE\ControleEstoque.Web\obj\Debug\ControleEstoque.Web.pdb
-C:\DEV\MVC_CE\ControleEstoque.Web\obj\Debug\ControleEstoque.Web.csprojAssemblyReference.cache
