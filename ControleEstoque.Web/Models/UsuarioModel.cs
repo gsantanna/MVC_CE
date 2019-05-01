@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleEstoque.Web.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -24,7 +25,9 @@ namespace ControleEstoque.Web.Models
                     comando.CommandText = string.Format(
                         "select count(*) " +
                             "from usuario " +
-                            "where login = '{0}' and senha = '{1}'", login, senha);
+                            "where login = '{0}' and senha = '{1}'", 
+                        login, CriptoHelp.HashMD5(senha));
+
                     ret = ((int)comando.ExecuteScalar() > 0);
                 }
             }
