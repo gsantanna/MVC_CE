@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ControleEstoque.Web.Models
 {
@@ -59,7 +60,7 @@ namespace ControleEstoque.Web.Models
                 {
                     comando.Connection = conexao;
                     comando.CommandText = "select * from grupo_produto where id=@id";
-                    comando.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                    comando.Parameters.Add("@id", SqlDbType.Int).Value = id; //usamos o Parameters  - Prevenindo o SQL Injection
 
                     var reader = comando.ExecuteReader();
 

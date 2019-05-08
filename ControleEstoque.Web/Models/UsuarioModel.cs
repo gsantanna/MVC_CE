@@ -25,6 +25,7 @@ namespace ControleEstoque.Web.Models
                     comando.Connection = conexao;
                     comando.CommandText = "select count(*) from usuario where login=@login and senha=@senha";
 
+                    //usamos o Parameters  - Prevenindo o SQL Injection
                     comando.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
                     comando.Parameters.Add("@senha", SqlDbType.VarChar).Value = CriptoHelp.HashMD5(senha);
 
